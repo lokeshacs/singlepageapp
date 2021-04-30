@@ -1,0 +1,22 @@
+{
+  "employee": [
+    {
+      "id": 2,
+      "name": "bhb",
+      "email": "hbh@gmail.com",
+      "age": 1,
+      "description": "d",
+      "gender": "Male",
+      "maritalStatus": "Maried"
+    },
+    {
+      "id": 3,
+      "name": "j",
+      "email": "A@gmail.com",
+      "age": 1,
+      "description": "dd",
+      "gender": "Male",
+      "maritalStatus": "Maried"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #3f48cc;height:40px;"></nav>
+<div class="container">
+  <form [formGroup]="profileForm" style="width: 500px;margin: auto;">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" formControlName="name">
+        <input type="text" style="display: none;" id="fname" formControlName="id">
+        <small *ngIf = "profileForm.get('name').touched && profileForm.get('name').invalid" style="color: red;">name is required </small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Email</label>
+      </div>
+      <div class="col-75">
+        <input type="text"  formControlName="email">
+        <small *ngIf = "profileForm.get('email').touched && profileForm.get('email').invalid" style="color: red;">enter a valid email format is required </small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Gender</label>
+      </div>
+      <div class="col-75">
+        <select id="country" formControlName="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+        <small *ngIf = "profileForm.get('gender').touched && profileForm.get('gender').invalid" style="color: red;">gender is required </small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Age</label>
+      </div>
+      <div class="col-75">
+        <input type="number" formControlName="age" >
+        <small *ngIf = "profileForm.get('age').touched && profileForm.get('age').invalid" style="color: red;">age is required </small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Marital status</label>
+      </div>
+      <div class="col-75">
+        <label class="checkbox-inline">
+          <input type="radio" formControlName = "maritalStatus" value="Maried">Maried
+          
+        </label>
+        <label class="checkbox-inline">
+          <input type="radio" formControlName = "maritalStatus" value="Unmaried">Unmaried
+        </label>
+        <small *ngIf = "profileForm.get('maritalStatus').touched && profileForm.get('maritalStatus').invalid" style="color: red;">maritial status is required </small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Description</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="" formControlName="description"
+          style="height:100px"></textarea>
+          <small *ngIf = "profileForm.get('description').touched && profileForm.get('description').invalid" style="color: red;">description is required </small>
+      </div>
+    </div>
+    <div class="container" style="text-align: center;">
+      <button type="submit" [disabled] = "!profileForm.valid" class="btn btn-space" class="btn btn-primary active"
+        (click)="createEmployee()">Add</button>&nbsp;
+     
+          
+        
+      <button type="button"  (click) = 'resetForm()'  class="btn btn-warning">Cancel</button>
+      <p><img src="https://thumbs.gfycat.com/LoneDetailedFairybluebird-max-1mb.gif" *ngIf="displayimg" style="width: 50px;height: 50px;margin-left:-0.5cm"></p>
+    </div>
+
+   
+    <!--   exmple-->
+
+  </form>
+</div>
+
+

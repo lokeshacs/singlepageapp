@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Marital status</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let comp of templateList">
+        <td>{{comp.name}}</td>
+        <td>{{comp.email}}</td>
+        <td>{{comp.gender}}</td>
+        <td>{{comp.age}}</td>
+        <td>{{comp.maritalStatus}}</td>
+        <td>{{comp.description}}</td>
+        <td><i class="fa fa-edit" style="font-size:20px; padding: 10px;" (click)="editEmployee(comp , comp.id)"></i>
+          <i class="fa fa-trash" style="font-size:20px;" (click)="deleteEmployee(comp.id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
